@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>这是第1行</li>
+    <li>这是第2行</li>
+    <li>这是第3行</li>
+    <li>这是第4行</li>
+    <li>这是第5行</li>
+</ul>
+<script>
+    var li = document.getElementsByTagName('li');
+    for(var i=0;i<li.length;i++){
+        /*
+        * 当在给每一个li绑定事件时，已经将每个li循环过，所以此时的i的值是5；
+        * 所以必须在每次循环绑定li的事件时将当前绑定li的i值记录下来。于是给了每一个li一个属性dqh。
+        *
+        * */
+        li[i].dqh = i+1;
+        li[i].onclick = function () {
+            alert('我是第'+this.dqh+'个li');
+        }
+    }
+
+
+</script>
+</body>
+</html>

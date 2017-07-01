@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-image: url(img/10.jpg);
+        }
+        /*.btn{*/
+            /*width: 50px;*/
+            /*height: 30px;*/
+        /*}*/
+        .div1{
+            width: 500px;
+            height: 200px;
+            background-color: orange;
+            position: relative;
+            left:476px;
+            top: 240px;
+        }
+        .input1{
+            width: 20px;
+            height: 20px;
+            font-size: 15px;
+            position: absolute;
+            text-align: center;
+            line-height: 20px;
+            top:0px;
+            right: 0px;
+        }
+    </style>
+</head>
+<body>
+<input type='submit' value = '登录' id = 'btn'>
+<script>
+    var btn = document.getElementById('btn');
+
+
+    var div = document.createElement('div');
+    div.setAttribute('class','div1');
+
+    var input1 = document.createElement('input');
+    input1.className = 'input1';
+    input1.value = '×';
+    input1.id = 'dian';
+    div.appendChild(input1);
+
+    btn.onclick = function () {
+        document.body.appendChild(div);
+    }
+    input1.onclick = function () {
+        document.body.removeChild(div);
+    }
+
+    
+
+</script>
+</body>
+</html>

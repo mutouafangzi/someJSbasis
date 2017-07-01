@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bg1{
+            background-color: red;
+        }
+        .bg0{
+            background-color: yellow;
+        }
+        .bianse{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>这是第1行</li>
+    <li>这是第2行</li>
+    <li>这是第3行</li>
+    <li>这是第4行</li>
+    <li>这是第5行</li>
+    <li>这是第6行</li>
+    <li>这是第7行</li>
+    <li>这是第8行</li>
+</ul>
+<script>
+    var li = document.getElementsByTagName('li');
+//    for(var i=0;i<li.length;i++){
+//        if(i%2){
+//            li[i].className = 'danshu';
+//        }else{
+//            li[i].className = 'shuangshu';
+//        }
+//    }
+
+    for(var i=0;i<li.length;i++){
+        li[i].className = 'bg'+ (i%2);
+        li[i].ghbs = i+1;
+        //li[i].className = this.className;
+        li[i].onmouseover = function (event) {
+            this.bs = this.className;
+//            this.className = 'bianse';
+            event.target.className = 'bianse';
+        }
+        li[i].onmouseout = function () {
+            this.className = this.bs;
+        }
+        li[i].onclick = function () {
+            alert('我是第'+this.ghbs+'行');
+        }
+    }
+
+</script>
+</body>
+</html>

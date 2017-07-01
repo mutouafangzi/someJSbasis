@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        li{
+            list-style: none;
+            /*transform-origin: 150px 150px;
+            transition: all 0.5s 0.1s;*/
+        }
+        body{
+            background-color: #494A5F;
+        }
+        #container{
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            background-color: white;
+            margin: 150px auto;
+            position: relative;
+            border-radius: 50%;
+            color: #99B977;
+            font: bold 25px/150px '微软雅黑';
+            /*transition: 0.24s 0.2s;*/
+			x-index:4;
+        }
+        a{
+            display: inline-block;
+            width: 75px;
+            height: 75px;
+            background-color:white;
+            color: #99B977;
+            line-height: 75px;
+            position: absolute;
+            border-radius: 50%;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.6s;
+        }
+
+        #container:hover{
+            background: rgba(255, 255, 255, 0.75);
+        }
+        #container #menu{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            /*border-radius: 50%;*/
+            transform: scale(0);
+            transition: transform 1.4s 0.05s;
+			/*transform:translate(-125px,-125px);*/
+            z-index: -1;
+        }
+        #container:hover #menu{
+            transition: transform 0.4s 0.08s, z-index   0s  0.5s;
+            transform: scale(1);
+			transform:translate(-125px,-125px);
+            z-index: 1;
+        }
+        #container:hover #menu li{
+            transition: all 0.6s;
+			
+			position: absolute;
+			/*top: 150px;
+			left: 150px;*/
+			transform-origin: 150px 150px;
+			transition: all 0.5s 0.1s;
+        }
+        #container:hover #menu li:nth-child(1) {
+            transition-delay: 0.04s;
+            transform: rotate(85deg);
+        }
+        #container:hover #menu li:nth-child(2) {
+            transition-delay: 0.06s;
+            transform: rotate(125deg);
+        }
+        #container:hover #menu li:nth-child(3) {
+            transition-delay: 0.08s;
+            transform: rotate(165deg);
+        }
+        #container:hover #menu li:nth-child(4) {
+            transition-delay: 0.10s;
+            transform: rotate(205deg);
+        }
+        #container:hover #menu li:nth-child(5) {
+            transition-delay: 0.12s;
+            transform: rotate(245deg);
+        }
+        #container:hover #menu li:nth-child(6) {
+            transition-delay: 0.14s;
+            transform: rotate(285deg);
+        }
+        #container:hover #menu li:nth-child(7) {
+            transition-delay: 0.16s;
+            transform: rotate(325deg);
+        }
+        #container:hover #menu li:nth-child(8) {
+            transition-delay: 0.18s;
+            transform: rotate(365deg);
+        }
+        #container:hover #menu li:nth-child(9) {
+            transition-delay: 0.20s;
+            transform: rotate(405deg);
+        }
+
+        #container:hover #menu li:nth-child(1) a {
+            transition-delay: 0.04s;
+            transform: rotate(635deg);
+        }
+        #container:hover #menu li:nth-child(2) a {
+            transition-delay: 0.08s;
+            transform: rotate(595deg);
+        }
+        #container:hover #menu li:nth-child(3) a {
+            transition-delay: 0.12s;
+            transform: rotate(555deg);
+        }
+        #container:hover #menu li:nth-child(4) a {
+            transition-delay: 0.16s;
+            transform: rotate(515deg);
+        }
+        #container:hover #menu li:nth-child(5) a {
+            transition-delay: 0.20s;
+            transform: rotate(475deg);
+        }
+        #container:hover #menu li:nth-child(6) a {
+            transition-delay: 0.24s;
+            transform: rotate(435deg);
+        }
+        #container:hover #menu li:nth-child(7) a {
+            transition-delay: 0.28s;
+            transform: rotate(395deg);
+        }
+        #container:hover #menu li:nth-child(8) a {
+            transition-delay: 0.32s;
+            transform: rotate(355deg);
+        }
+        #container:hover #menu li:nth-child(9) a {
+            transition-delay: 0.36s;
+            transform: rotate(315deg);
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">主菜单
+    <ul id="menu">
+        <li>
+            <a href="#">1</a>
+        </li>
+        <li>
+            <a href="#">2</a>
+        </li>
+        <li>
+            <a href="#">3</a>
+        </li>
+        <li>
+            <a href="#">4</a>
+        </li>
+        <li>
+            <a href="#">5</a>
+        </li>
+        <li>
+            <a href="#">6</a>
+        </li>
+        <li>
+            <a href="#">7</a>
+        </li>
+        <li>
+            <a href="#">8</a>
+        </li>
+        <li>
+            <a href="#">9</a>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

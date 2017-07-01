@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0}
+        ul{list-style: none;}
+        ul{margin: 0 auto;width: 300px;height: 50px;line-height: 50px;text-align: center;}
+        ul:after{display: block;content: "";clear: both;}
+        li{float: left;background: #c9c9c9;width: 100px;cursor: pointer;}
+        div{margin: 0 auto;width: 300px;height: 300px;background: #59b07d;color: #fff;line-height: 300px;text-align: center;font-size: 50px;display: none;}
+        li.cur{background: #59b07d;color: #fff;}
+        div.cur{display: block;}
+    </style>
+</head>
+<body>
+<ul>
+    <li class="cur">电影</li><li>电视剧</li><li>新闻</li>
+</ul>
+<div class="cur">电影</div><div>电视剧</div><div>新闻</div>
+<script>
+    var list = document.getElementsByTagName('li');
+    var divs = document.getElementsByTagName('div');
+    /*for(var i=0;i<list.length;i++){
+        list[i].dianji = i;
+        list[i].onclick =function(){
+           tab(this.dianji);
+        }
+        function tab(n) {
+            /!* 触发事件第一步，先把所有的li背景颜色取消，然后将点击的那个li加上和下面图片相同的背景颜色。
+            * 同样的，先把下面div内的文字全部去掉，然后将点击的同样i位置的div样式变成一样的样式。
+            * *!/
+            for(var i=0;i<list.length;i++){
+                list[i].className = '';
+                divs[i].className = '';
+            }
+            list[n].className = 'cur';
+            divs[n].className = 'cur';
+        }
+    }*/
+    for(var i=0;i<list.length;i++){
+        list[i].dream = i;
+        list[i].onclick = function (event) {
+           //这样可以得出每次点击的li元素，但是依然不知道点击的这个li元素是第几个li，导致下面的div无法得知调整哪个。所以还是需要在绑定事件之前进行记录数据，每循环一次，对该次循环的li添加一个新属性并做上数字记录。
+            // console.log(event.target);
+            for(var i=0;i<list.length;i++){
+                list[i].className = '';
+                divs[i].className = '';
+            }
+            /*
+            * 在事件捆绑之前得到的每个的属性值，在事件触发的时候，只有通过this或者event.target来得到！
+            * */
+//            list[this.dream].className = 'cur';
+//            divs[this.dream].className = 'cur'
+            list[event.target.dream].className = 'cur';
+            divs[event.target.dream].className = 'cur';
+        }
+    }
+</script>
+</body>
+</html>
